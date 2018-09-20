@@ -7,14 +7,14 @@ namespace NamedIterator
     class Letter
     {
         char ch = 'A';
-        int end; //кількість букв
+        int end; //Кількість букв
 
         public Letter(int end)
         {
             this.end = end;
         }
 
-        // ітератор, повертає end-букв
+        // Ітератор, повертає end-букв
         public IEnumerator GetEnumerator()
         {
             for (int i = 0; i < this.end; i++)
