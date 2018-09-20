@@ -1,0 +1,45 @@
+﻿using System;
+namespace Delegates
+{
+    delegate void MyDelegate(string s);
+    
+    class MyClass
+    {
+        
+        public static void Hello(string s)
+        {
+            Console.WriteLine("  Hello, {0}!", s);
+        }
+
+        public static void Goodbye(string s)
+        {
+            Console.WriteLine("  Goodbye, {0}!", s);
+        }
+
+        public static void Main()
+        {
+            MyDelegate a, b, c, d;
+
+            // Create the delegate object a that references 
+            // the method Hello:
+            a = new MyDelegate(Hello);
+            // Create the delegate object b that references 
+            // the method Goodbye:
+            b = new MyDelegate(Goodbye);
+            // The two delegates, a and b, are composed to form c: 
+            c = a + b;
+            // Remove a from the composed delegate, leaving d, 
+            // which calls only the method Goodbye:
+            d = c - a;
+
+            Console.WriteLine("Invoking delegate a:");
+            a("A");
+            Console.WriteLine("\nInvoking delegate b:");
+            b("B");
+            Console.WriteLine("\nInvoking delegate c:");
+            c("C");
+            Console.WriteLine("\nInvoking delegate d:");
+            d("D");
+        }
+    }
+}
