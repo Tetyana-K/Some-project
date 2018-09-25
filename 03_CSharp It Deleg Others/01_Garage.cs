@@ -18,7 +18,7 @@ namespace GarageNS
         }
 
     }
-   public  class Garage//: IEnumerable
+   public  class Garage: IEnumerable
     {
 
         private Car[] garage;

@@ -45,17 +45,17 @@ namespace Enumerator_and__Enumerable
             g[0] = new Car("Audi", 155);
             g[1] = new Car("Honda", 160);
 
-            Console.WriteLine("Using for and indexator");
+            Console.WriteLine("\tUsing for and indexator");
             for (int i = 0; i < g.Size; ++i)
                 Console.WriteLine(g[i]);
 
-            Console.WriteLine("\nUsing GetEnumerator()");
+            Console.WriteLine("\n\tUsing GetEnumerator()");
             IEnumerator enCars = g.GetEnumerator();
             while (enCars.MoveNext())
             {
                 Console.Write("{0}\n", enCars.Current);
             }
-            Console.WriteLine("\nUsing foreach");
+            Console.WriteLine("\n\tUsing foreach");
             
             foreach (var car in g) // foreach потребує перелічувача
             {
